@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Dimension_Name_________Text011">
+          <DataField>Dimension_Name_________Text011</DataField>
+        </Field>
+        <Field Name="FORMAT_TODAY_0_4_">
+          <DataField>FORMAT_TODAY_0_4_</DataField>
+        </Field>
+        <Field Name="TIME">
+          <DataField>TIME</DataField>
+        </Field>
+        <Field Name="CompanyInformation_Name">
+          <DataField>CompanyInformation_Name</DataField>
+        </Field>
+        <Field Name="USERID">
+          <DataField>USERID</DataField>
+        </Field>
+        <Field Name="PeriodText">
+          <DataField>PeriodText</DataField>
+        </Field>
+        <Field Name="PrintToExcel">
+          <DataField>PrintToExcel</DataField>
+        </Field>
+        <Field Name="UseAddRptCurr">
+          <DataField>UseAddRptCurr</DataField>
+        </Field>
+        <Field Name="PageGroupNo">
+          <DataField>PageGroupNo</DataField>
+        </Field>
+        <Field Name="GLAccountFilter">
+          <DataField>GLAccountFilter</DataField>
+        </Field>
+        <Field Name="G_L_Account__G_L_Account___No__of_Blank_Lines_">
+          <DataField>G_L_Account__G_L_Account___No__of_Blank_Lines_</DataField>
+        </Field>
+        <Field Name="PageHeaderCondition">
+          <DataField>PageHeaderCondition</DataField>
+        </Field>
+        <Field Name="Dimension_Name_________Text011_Control1011">
+          <DataField>Dimension_Name_________Text011_Control1011</DataField>
+        </Field>
+        <Field Name="FORMAT_TODAY_0_4__Control1012">
+          <DataField>FORMAT_TODAY_0_4__Control1012</DataField>
+        </Field>
+        <Field Name="TIME_Control1013">
+          <DataField>TIME_Control1013</DataField>
+        </Field>
+        <Field Name="CompanyInformation_Name_Control1014">
+          <DataField>CompanyInformation_Name_Control1014</DataField>
+        </Field>
+        <Field Name="USERID_Control1017">
+          <DataField>USERID_Control1017</DataField>
+        </Field>
+        <Field Name="PeriodText_Control1018">
+          <DataField>PeriodText_Control1018</DataField>
+        </Field>
+        <Field Name="SubTitle">
+          <DataField>SubTitle</DataField>
+        </Field>
+        <Field Name="G_L_Account__TABLECAPTION__________GLAccountFilter">
+          <DataField>G_L_Account__TABLECAPTION__________GLAccountFilter</DataField>
+        </Field>
+        <Field Name="ColumnHead_1_">
+          <DataField>ColumnHead_1_</DataField>
+        </Field>
+        <Field Name="ColumnHead_2_">
+          <DataField>ColumnHead_2_</DataField>
+        </Field>
+        <Field Name="Condition_GLAccount_Header_6">
+          <DataField>Condition_GLAccount_Header_6</DataField>
+        </Field>
+        <Field Name="ColumnHead_1__Control41">
+          <DataField>ColumnHead_1__Control41</DataField>
+        </Field>
+        <Field Name="ColumnHead_2__Control42">
+          <DataField>ColumnHead_2__Control42</DataField>
+        </Field>
+        <Field Name="ColumnHead_3_">
+          <DataField>ColumnHead_3_</DataField>
+        </Field>
+        <Field Name="Condition_GLAccount_Header_7">
+          <DataField>Condition_GLAccount_Header_7</DataField>
+        </Field>
+        <Field Name="ColumnHead_1__Control85">
+          <DataField>ColumnHead_1__Control85</DataField>
+        </Field>
+        <Field Name="ColumnHead_2__Control86">
+          <DataField>ColumnHead_2__Control86</DataField>
+        </Field>
+        <Field Name="ColumnHead_3__Control87">
+          <DataField>ColumnHead_3__Control87</DataField>
+        </Field>
+        <Field Name="ColumnHead_4_">
+          <DataField>ColumnHead_4_</DataField>
+        </Field>
+        <Field Name="Condition_GLAccount_Header_8">
+          <DataField>Condition_GLAccount_Header_8</DataField>
+        </Field>
+        <Field Name="ColumnHead_1__Control89">
+          <DataField>ColumnHead_1__Control89</DataField>
+        </Field>
+        <Field Name="ColumnHead_2__Control90">
+          <DataField>ColumnHead_2__Control90</DataField>
+        </Field>
+        <Field Name="ColumnHead_3__Control91">
+          <DataField>ColumnHead_3__Control91</DataField>
+        </Field>
+        <Field Name="ColumnHead_4__Control92">
+          <DataField>ColumnHead_4__Control92</DataField>
+        </Field>
+        <Field Name="Condition_GLAccount_Header_9">
+          <DataField>Condition_GLAccount_Header_9</DataField>
+        </Field>
+        <Field Name="ColumnHead_1__Control192">
+          <DataField>ColumnHead_1__Control192</DataField>
+        </Field>
+        <Field Name="ColumnHead_2__Control193">
+          <DataField>ColumnHead_2__Control193</DataField>
+        </Field>
+        <Field Name="ColumnHead_3__Control194">
+          <DataField>ColumnHead_3__Control194</DataField>
+        </Field>
+        <Field Name="ColumnHead_4__Control195">
+          <DataField>ColumnHead_4__Control195</DataField>
+        </Field>
+        <Field Name="ColumnHead_5_">
+          <DataField>ColumnHead_5_</DataField>
+        </Field>
+        <Field Name="ColumnHead_6_">
+          <DataField>ColumnHead_6_</DataField>
+        </Field>
+        <Field Name="Condition_GLAccount_Header_10">
+          <DataField>Condition_GLAccount_Header_10</DataField>
+        </Field>
+        <Field Name="ColumnHead_1__Control198">
+          <DataField>ColumnHead_1__Control198</DataField>
+        </Field>
+        <Field Name="ColumnHead_2__Control199">
+          <DataField>ColumnHead_2__Control199</DataField>
+        </Field>
+        <Field Name="ColumnHead_3__Control200">
+          <DataField>ColumnHead_3__Control200</DataField>
+        </Field>
+        <Field Name="ColumnHead_4__Control201">
+          <DataField>ColumnHead_4__Control201</DataField>
+        </Field>
+        <Field Name="ColumnHead_5__Control202">
+          <DataField>ColumnHead_5__Control202</DataField>
+        </Field>
+        <Field Name="ColumnHead_6__Control203">
+          <DataField>ColumnHead_6__Control203</DataField>
+        </Field>
+        <Field Name="ColumnHead_7_">
+          <DataField>ColumnHead_7_</DataField>
+        </Field>
+        <Field Name="ColumnHead_8_">
+          <DataField>ColumnHead_8_</DataField>
+        </Field>
+        <Field Name="Condition_GLAccount_Header_11">
+          <DataField>Condition_GLAccount_Header_11</DataField>
+        </Field>
+        <Field Name="G_L_Account_No_">
+          <DataField>G_L_Account_No_</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENOCaption">
+          <DataField>CurrReport_PAGENOCaption</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENO_Control1016Caption">
+          <DataField>CurrReport_PAGENO_Control1016Caption</DataField>
+        </Field>
+        <Field Name="G_L_Account___No___Control18Caption">
+          <DataField>G_L_Account___No___Control18Caption</DataField>
+        </Field>
+        <Field Name="DescriptionLine2_Control10Caption">
+          <DataField>DescriptionLine2_Control10Caption</DataField>
+        </Field>
+        <Field Name="G_L_Account___No___Control18Caption_Control39">
+          <DataField>G_L_Account___No___Control18Caption_Control39</DataField>
+        </Field>
+        <Field Name="DescriptionLine2_Control10Caption_Control40">
+          <DataField>DescriptionLine2_Control10Caption_Control40</DataField>
+        </Field>
+        <Field Name="G_L_Account___No___Control16Caption">
+          <DataField>G_L_Account___No___Control16Caption</DataField>
+        </Field>
+        <Field Name="DescriptionLine2_Control51Caption">
+          <DataField>DescriptionLine2_Control51Caption</DataField>
+        </Field>
+        <Field Name="G_L_Account___No___Control16Caption_Control33">
+          <DataField>G_L_Account___No___Control16Caption_Control33</DataField>
+        </Field>
+        <Field Name="DescriptionLine2_Control51Caption_Control34">
+          <DataField>DescriptionLine2_Control51Caption_Control34</DataField>
+        </Field>
+        <Field Name="G_L_Account___No___Control7Caption">
+          <DataField>G_L_Account___No___Control7Caption</DataField>
+        </Field>
+        <Field Name="DescriptionLine2_Control100Caption">
+          <DataField>DescriptionLine2_Control100Caption</DataField>
+        </Field>
+        <Field Name="G_L_Account___No___Control7Caption_Control29">
+          <DataField>G_L_Account___No___Control7Caption_Control29</DataField>
+        </Field>
+        <Field Name="DescriptionLine2_Control100Caption_Control30">
+          <DataField>DescriptionLine2_Control100Caption_Control30</DataField>
+        </Field>
+        <Field Name="DescriptionLine1">
+          <DataField>DescriptionLine1</DataField>
+        </Field>
+        <Field Name="Integer_Body_1_Condition">
+          <DataField>Integer_Body_1_Condition</DataField>
+        </Field>
+        <Field Name="DescriptionLine2">
+          <DataField>DescriptionLine2</DataField>
+        </Field>
+        <Field Name="G_L_Account___No__">
+          <DataField>G_L_Account___No__</DataField>
+        </Field>
+        <Field Name="Integer_Body_2_Condition">
+          <DataField>Integer_Body_2_Condition</DataField>
+        </Field>
+        <Field Name="DescriptionLine1_Control61">
+          <DataField>DescriptionLine1_Control61</DataField>
+        </Field>
+        <Field Name="Integer_Body_3_Condition">
+          <DataField>Integer_Body_3_Condition</DataField>
+        </Field>
+        <Field Name="DescriptionLine2_Control62">
+          <DataField>DescriptionLine2_Control62</DataField>
+        </Field>
+        <Field Name="G_L_Account___No___Control19">
+          <DataField>G_L_Account___No___Control19</DataField>
+        </Field>
+        <Field Name="Integer_Body_4_Condition">
+          <DataField>Integer_Body_4_Condition</DataField>
+        </Field>
+        <Field Name="DescriptionLine1_Control116">
+          <DataField>DescriptionLine1_Control116</DataField>
+        </Field>
+        <Field Name="Integer_Body_5_Condition">
+          <DataField>Integer_Body_5_Condition</DataField>
+        </Field>
+        <Field Name="DescriptionLine2_Control117">
+          <DataField>DescriptionLine2_Control117</DataField>
+        </Field>
+        <Field Name="G_L_Account___No___Control5">
+          <DataField>G_L_Account___No___Control5</DataField>
+        </Field>
+        <Field Name="Integer_Body_6_Condition">
+          <DataField>Integer_Body_6_Condition</DataField>
+        </Field>
+        <Field Name="PrintAmount_1_">
+          <DataField>PrintAmount_1_</DataField>
+        </Field>
+        <Field Name="PrintAmount_2_">
+          <DataField>PrintAmount_2_</DataField>
+        </Field>
+        <Field Name="DescriptionLine2_Control10">
+          <DataField>DescriptionLine2_Control10</DataField>
+        </Field>
+        <Field Name="G_L_Account___No___Control18">
+          <DataField>G_L_Account___No___Control18</DataField>
+        </Field>
+        <Field Name="Integer_Body_7_Condition">
+          <DataField>Integer_Body_7_Condition</DataField>
+        </Field>
+        <Field Name="DescriptionLine2_Control25">
+          <DataField>DescriptionLine2_Control25</DataField>
+        </Field>
+        <Field Name="PrintAmount_1__Control26">
+          <DataField>PrintAmount_1__Control26</DataField>
+        </Field>
+        <Field Name="PrintAmount_2__Control27">
+          <DataField>PrintAmount_2__Control27</DataField>
+        </Field>
+        <Field Name="PrintAmount_3_">
+          <DataField>PrintAmount_3_</DataField>
+        </Field>
+        <Field Name="G_L_Account___No___Control17">
+          <DataField>G_L_Account___No___Control17</DataField>
+        </Field>
+        <Field Name="Integer_Body_8_Condition">
+          <DataField>Integer_Body_8_Condition</DataField>
+        </Field>
+        <Field Name="DescriptionLine2_Control51">
+          <DataField>DescriptionLine2_Control51</DataField>
+        </Field>
+        <Field Name="PrintAmount_1__Control52">
+          <DataField>PrintAmount_1__Control52</DataField>
+        </Field>
+        <Field Name="PrintAmount_2__Control53">
+          <DataField>PrintAmount_2__Control53</DataField>
+        </Field>
+        <Field Name="PrintAmount_3__Control54">
+          <DataField>PrintAmount_3__Control54</DataField>
+        </Field>
+        <Field Name="PrintAmount_4_">
+          <DataField>PrintAmount_4_</DataField>
+        </Field>
+        <Field Name="G_L_Account___No___Control16">
+          <DataField>G_L_Account___No___Control16</DataField>
+        </Field>
+        <Field Name="Integer_Body_9_Condition">
+          <DataField>Integer_Body_9_Condition</DataField>
+        </Field>
+        <Field Name="DescriptionLine2_Control56">
+          <DataField>DescriptionLine2_Control56</DataField>
+        </Field>
+        <Field Name="PrintAmount_1__Control57">
+          <DataField>PrintAmount_1__Control57</DataField>
+        </Field>
+        <Field Name="PrintAmount_2__Control58">
+          <DataField>PrintAmount_2__Control58</DataField>
+        </Field>
+        <Field Name="PrintAmount_3__Control59">
+          <DataField>PrintAmount_3__Control59</DataField>
+        </Field>
+        <Field Name="PrintAmount_4__Control60">
+          <DataField>PrintAmount_4__Control60</DataField>
+        </Field>
+        <Field Name="G_L_Account___No___Control11">
+          <DataField>G_L_Account___No___Control11</DataField>
+        </Field>
+        <Field Name="Integer_Body_10_Condition">
+          <DataField>Integer_Body_10_Condition</DataField>
+        </Field>
+        <Field Name="DescriptionLine2_Control100">
+          <DataField>DescriptionLine2_Control100</DataField>
+        </Field>
+        <Field Name="PrintAmount_1__Control101">
+          <DataField>PrintAmount_1__Control101</DataField>
+        </Field>
+        <Field Name="PrintAmount_2__Control102">
+          <DataField>PrintAmount_2__Control102</DataField>
+        </Field>
+        <Field Name="PrintAmount_3__Control103">
+          <DataField>PrintAmount_3__Control103</DataField>
+        </Field>
+        <Field Name="PrintAmount_4__Control104">
+          <DataField>PrintAmount_4__Control104</DataField>
+        </Field>
+        <Field Name="PrintAmount_5_">
+          <DataField>PrintAmount_5_</DataField>
+        </Field>
+        <Field Name="PrintAmount_6_">
+          <DataField>PrintAmount_6_</DataField>
+        </Field>
+        <Field Name="G_L_Account___No___Control7">
+          <DataField>G_L_Account___No___Control7</DataField>
+        </Field>
+        <Field Name="Integer_Body_11_Condition">
+          <DataField>Integer_Body_11_Condition</DataField>
+        </Field>
+        <Field Name="DescriptionLine2_Control107">
+          <DataField>DescriptionLine2_Control107</DataField>
+        </Field>
+        <Field Name="PrintAmount_1__Control108">
+          <DataField>PrintAmount_1__Control108</DataField>
+        </Field>
+        <Field Name="PrintAmount_2__Control109">
+          <DataField>PrintAmount_2__Control109</DataField>
+        </Field>
+        <Field Name="PrintAmount_3__Control110">
+          <DataField>PrintAmount_3__Control110</DataField>
+        </Field>
+        <Field Name="PrintAmount_4__Control111">
+          <DataField>PrintAmount_4__Control111</DataField>
+        </Field>
+        <Field Name="PrintAmount_5__Control112">
+          <DataField>PrintAmount_5__Control112</DataField>
+        </Field>
+        <Field Name="PrintAmount_6__Control113">
+          <DataField>PrintAmount_6__Control113</DataField>
+        </Field>
+        <Field Name="PrintAmount_7_">
+          <DataField>PrintAmount_7_</DataField>
+        </Field>
+        <Field Name="PrintAmount_8_">
+          <DataField>PrintAmount_8_</DataField>
+        </Field>
+        <Field Name="G_L_Account___No___Control6">
+          <DataField>G_L_Account___No___Control6</DataField>
+        </Field>
+        <Field Name="Integer_Body_12_Condition">
+          <DataField>Integer_Body_12_Condition</DataField>
+        </Field>
+        <Field Name="Integer_Number">
+          <DataField>Integer_Number</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

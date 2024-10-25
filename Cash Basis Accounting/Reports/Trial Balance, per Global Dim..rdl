@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="DimCode_DimValue">
+          <DataField>DimCode_DimValue</DataField>
+        </Field>
+        <Field Name="Code_DimValue">
+          <DataField>Code_DimValue</DataField>
+        </Field>
+        <Field Name="DimensionValueName">
+          <DataField>DimensionValueName</DataField>
+        </Field>
+        <Field Name="TodayFormatted">
+          <DataField>TodayFormatted</DataField>
+        </Field>
+        <Field Name="Time">
+          <DataField>Time</DataField>
+        </Field>
+        <Field Name="CompanyInfoName">
+          <DataField>CompanyInfoName</DataField>
+        </Field>
+        <Field Name="PeriodText">
+          <DataField>PeriodText</DataField>
+        </Field>
+        <Field Name="PageGroupNo">
+          <DataField>PageGroupNo</DataField>
+        </Field>
+        <Field Name="NoofBlankLines_GLAccount">
+          <DataField>NoofBlankLines_GLAccount</DataField>
+        </Field>
+        <Field Name="PageHeaderCondition">
+          <DataField>PageHeaderCondition</DataField>
+        </Field>
+        <Field Name="PagePerRecordNo">
+          <DataField>PagePerRecordNo</DataField>
+        </Field>
+        <Field Name="GLAccountFilter">
+          <DataField>GLAccountFilter</DataField>
+        </Field>
+        <Field Name="UseAddRptCurr">
+          <DataField>UseAddRptCurr</DataField>
+        </Field>
+        <Field Name="SubTitle">
+          <DataField>SubTitle</DataField>
+        </Field>
+        <Field Name="GLAccTblCaptionGLAccountFilter">
+          <DataField>GLAccTblCaptionGLAccountFilter</DataField>
+        </Field>
+        <Field Name="ColumnHead1">
+          <DataField>ColumnHead1</DataField>
+        </Field>
+        <Field Name="ColumnHead2">
+          <DataField>ColumnHead2</DataField>
+        </Field>
+        <Field Name="ConditionGLAccountHdr6">
+          <DataField>ConditionGLAccountHdr6</DataField>
+        </Field>
+        <Field Name="ColumnHead3">
+          <DataField>ColumnHead3</DataField>
+        </Field>
+        <Field Name="ConditionGLAccountHdr7">
+          <DataField>ConditionGLAccountHdr7</DataField>
+        </Field>
+        <Field Name="ColumnHead4">
+          <DataField>ColumnHead4</DataField>
+        </Field>
+        <Field Name="ConditionGLAccountHdr8">
+          <DataField>ConditionGLAccountHdr8</DataField>
+        </Field>
+        <Field Name="ConditionGLAccountHdr9">
+          <DataField>ConditionGLAccountHdr9</DataField>
+        </Field>
+        <Field Name="ColumnHead5">
+          <DataField>ColumnHead5</DataField>
+        </Field>
+        <Field Name="ColumnHead6">
+          <DataField>ColumnHead6</DataField>
+        </Field>
+        <Field Name="ConditionGLAccountHdr10">
+          <DataField>ConditionGLAccountHdr10</DataField>
+        </Field>
+        <Field Name="ColumnHead7">
+          <DataField>ColumnHead7</DataField>
+        </Field>
+        <Field Name="ColumnHead8">
+          <DataField>ColumnHead8</DataField>
+        </Field>
+        <Field Name="ConditionGLAccountHdr11">
+          <DataField>ConditionGLAccountHdr11</DataField>
+        </Field>
+        <Field Name="No_GLAccount">
+          <DataField>No_GLAccount</DataField>
+        </Field>
+        <Field Name="PageCaption">
+          <DataField>PageCaption</DataField>
+        </Field>
+        <Field Name="NameCaption">
+          <DataField>NameCaption</DataField>
+        </Field>
+        <Field Name="NoCaption_GLAccount">
+          <DataField>NoCaption_GLAccount</DataField>
+        </Field>
+        <Field Name="DescriptionLine1">
+          <DataField>DescriptionLine1</DataField>
+        </Field>
+        <Field Name="IntegerBody1Condition">
+          <DataField>IntegerBody1Condition</DataField>
+        </Field>
+        <Field Name="DescriptionLine2">
+          <DataField>DescriptionLine2</DataField>
+        </Field>
+        <Field Name="GLAcccountNo">
+          <DataField>GLAcccountNo</DataField>
+        </Field>
+        <Field Name="IntegerBody2Condition">
+          <DataField>IntegerBody2Condition</DataField>
+        </Field>
+        <Field Name="IntegerBody3Condition">
+          <DataField>IntegerBody3Condition</DataField>
+        </Field>
+        <Field Name="IntegerBody4Condition">
+          <DataField>IntegerBody4Condition</DataField>
+        </Field>
+        <Field Name="IntegerBody5Condition">
+          <DataField>IntegerBody5Condition</DataField>
+        </Field>
+        <Field Name="IntegerBody6Condition">
+          <DataField>IntegerBody6Condition</DataField>
+        </Field>
+        <Field Name="PrintAmt1">
+          <DataField>PrintAmt1</DataField>
+        </Field>
+        <Field Name="PrintAmt2">
+          <DataField>PrintAmt2</DataField>
+        </Field>
+        <Field Name="IntegerBody7Condition">
+          <DataField>IntegerBody7Condition</DataField>
+        </Field>
+        <Field Name="PrintAmt3">
+          <DataField>PrintAmt3</DataField>
+        </Field>
+        <Field Name="IntegerBody8Condition">
+          <DataField>IntegerBody8Condition</DataField>
+        </Field>
+        <Field Name="PrintAmt4">
+          <DataField>PrintAmt4</DataField>
+        </Field>
+        <Field Name="IntegerBody9Condition">
+          <DataField>IntegerBody9Condition</DataField>
+        </Field>
+        <Field Name="IntegerBody10Condition">
+          <DataField>IntegerBody10Condition</DataField>
+        </Field>
+        <Field Name="PrintAmt5">
+          <DataField>PrintAmt5</DataField>
+        </Field>
+        <Field Name="PrintAmt6">
+          <DataField>PrintAmt6</DataField>
+        </Field>
+        <Field Name="IntegerBody11Condition">
+          <DataField>IntegerBody11Condition</DataField>
+        </Field>
+        <Field Name="PrintAmt7">
+          <DataField>PrintAmt7</DataField>
+        </Field>
+        <Field Name="PrintAmt8">
+          <DataField>PrintAmt8</DataField>
+        </Field>
+        <Field Name="IntegerBody12Condition">
+          <DataField>IntegerBody12Condition</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

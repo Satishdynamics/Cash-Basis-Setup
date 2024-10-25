@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="G_L_Account_No_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>G_L_Account_No_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>G_L_Account_No_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="G_L_Entry__Posting_Date_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>G_L_Entry__Posting_Date_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>G_L_Entry__Posting_Date_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="G_L_Entry__Document_Type_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>G_L_Entry__Document_Type_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>G_L_Entry__Document_Type_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="G_L_Entry__Document_No__Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>G_L_Entry__Document_No__Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>G_L_Entry__Document_No__Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="G_L_Entry__Source_Code_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>G_L_Entry__Source_Code_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>G_L_Entry__Source_Code_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="G_L_Entry__Source_Type_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>G_L_Entry__Source_Type_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>G_L_Entry__Source_Type_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="G_L_Entry__Source_No__Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>G_L_Entry__Source_No__Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>G_L_Entry__Source_No__Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="G_L_Entry_DescriptionCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>G_L_Entry_DescriptionCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>G_L_Entry_DescriptionCaption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="MainTitle">
+          <DataField>MainTitle</DataField>
+        </Field>
+        <Field Name="TIME">
+          <DataField>TIME</DataField>
+        </Field>
+        <Field Name="CompanyInformation_Name">
+          <DataField>CompanyInformation_Name</DataField>
+        </Field>
+        <Field Name="PeriodText">
+          <DataField>PeriodText</DataField>
+        </Field>
+        <Field Name="SubTitle">
+          <DataField>SubTitle</DataField>
+        </Field>
+        <Field Name="GLFilter">
+          <DataField>GLFilter</DataField>
+        </Field>
+        <Field Name="GLEntryFilter">
+          <DataField>GLEntryFilter</DataField>
+        </Field>
+        <Field Name="PrintTypeAll">
+          <DataField>PrintTypeAll</DataField>
+        </Field>
+        <Field Name="PrintTypeBalances">
+          <DataField>PrintTypeBalances</DataField>
+        </Field>
+        <Field Name="PrintTypeActivities">
+          <DataField>PrintTypeActivities</DataField>
+        </Field>
+        <Field Name="PrintType">
+          <DataField>PrintType</DataField>
+        </Field>
+        <Field Name="UseAddRptCurr">
+          <DataField>UseAddRptCurr</DataField>
+        </Field>
+        <Field Name="PrintDetail">
+          <DataField>PrintDetail</DataField>
+        </Field>
+        <Field Name="IncludeSecondLine">
+          <DataField>IncludeSecondLine</DataField>
+        </Field>
+        <Field Name="OnlyOnePerPage">
+          <DataField>OnlyOnePerPage</DataField>
+        </Field>
+        <Field Name="G_L_Account__TABLECAPTION__________GLFilter">
+          <DataField>G_L_Account__TABLECAPTION__________GLFilter</DataField>
+        </Field>
+        <Field Name="G_L_Entry__TABLECAPTION__________GLEntryFilter">
+          <DataField>G_L_Entry__TABLECAPTION__________GLEntryFilter</DataField>
+        </Field>
+        <Field Name="STRSUBSTNO_Text002__No___">
+          <DataField>STRSUBSTNO_Text002__No___</DataField>
+        </Field>
+        <Field Name="G_L_Account_Name">
+          <DataField>G_L_Account_Name</DataField>
+        </Field>
+        <Field Name="BeginningBalance">
+          <DataField>BeginningBalance</DataField>
+        </Field>
+        <Field Name="BeginningBalanceFormat">
+          <DataField>BeginningBalanceFormat</DataField>
+        </Field>
+        <Field Name="AnyEntries">
+          <DataField>AnyEntries</DataField>
+        </Field>
+        <Field Name="BeginBalTotal">
+          <DataField>BeginBalTotal</DataField>
+        </Field>
+        <Field Name="BeginBalTotalFormat">
+          <DataField>BeginBalTotalFormat</DataField>
+        </Field>
+        <Field Name="DebitAmount_GLAccount">
+          <DataField>DebitAmount_GLAccount</DataField>
+        </Field>
+        <Field Name="DebitAmount_GLAccountFormat">
+          <DataField>DebitAmount_GLAccountFormat</DataField>
+        </Field>
+        <Field Name="CreditAmount_GLAccount">
+          <DataField>CreditAmount_GLAccount</DataField>
+        </Field>
+        <Field Name="CreditAmount_GLAccountFormat">
+          <DataField>CreditAmount_GLAccountFormat</DataField>
+        </Field>
+        <Field Name="EndBalTotal">
+          <DataField>EndBalTotal</DataField>
+        </Field>
+        <Field Name="EndBalTotalFormat">
+          <DataField>EndBalTotalFormat</DataField>
+        </Field>
+        <Field Name="G_L_Account_No_">
+          <DataField>G_L_Account_No_</DataField>
+        </Field>
+        <Field Name="G_L_Account_Global_Dimension_1_Filter">
+          <DataField>G_L_Account_Global_Dimension_1_Filter</DataField>
+        </Field>
+        <Field Name="G_L_Account_Global_Dimension_2_Filter">
+          <DataField>G_L_Account_Global_Dimension_2_Filter</DataField>
+        </Field>
+        <Field Name="G_L_Account_Business_Unit_Filter">
+          <DataField>G_L_Account_Business_Unit_Filter</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENOCaption">
+          <DataField>CurrReport_PAGENOCaption</DataField>
+        </Field>
+        <Field Name="NoBalCaption">
+          <DataField>NoBalCaption</DataField>
+        </Field>
+        <Field Name="NoActCaption">
+          <DataField>NoActCaption</DataField>
+        </Field>
+        <Field Name="BalZeroCaption">
+          <DataField>BalZeroCaption</DataField>
+        </Field>
+        <Field Name="PADSTR_____G_L_Account__Indentation_____G_L_Account__NameCaption">
+          <DataField>PADSTR_____G_L_Account__Indentation_____G_L_Account__NameCaption</DataField>
+        </Field>
+        <Field Name="DebitAmount_Control85Caption">
+          <DataField>DebitAmount_Control85Caption</DataField>
+        </Field>
+        <Field Name="CreditAmount_Control86Caption">
+          <DataField>CreditAmount_Control86Caption</DataField>
+        </Field>
+        <Field Name="DebitAmount_Control75Caption">
+          <DataField>DebitAmount_Control75Caption</DataField>
+        </Field>
+        <Field Name="CreditAmount_Control76Caption">
+          <DataField>CreditAmount_Control76Caption</DataField>
+        </Field>
+        <Field Name="BalanceCaption">
+          <DataField>BalanceCaption</DataField>
+        </Field>
+        <Field Name="Beginning_BalanceCaption">
+          <DataField>Beginning_BalanceCaption</DataField>
+        </Field>
+        <Field Name="Ending_BalanceCaption">
+          <DataField>Ending_BalanceCaption</DataField>
+        </Field>
+        <Field Name="ReportTotalsCaption">
+          <DataField>ReportTotalsCaption</DataField>
+        </Field>
+        <Field Name="ReportTotalBegBalCaption">
+          <DataField>ReportTotalBegBalCaption</DataField>
+        </Field>
+        <Field Name="ReportTotalActivitiesCaption">
+          <DataField>ReportTotalActivitiesCaption</DataField>
+        </Field>
+        <Field Name="ReportTotalEndBalCaption">
+          <DataField>ReportTotalEndBalCaption</DataField>
+        </Field>
+        <Field Name="ExternalDocNoCaption">
+          <DataField>ExternalDocNoCaption</DataField>
+        </Field>
+        <Field Name="Account_______G_L_Account___No__">
+          <DataField>Account_______G_L_Account___No__</DataField>
+        </Field>
+        <Field Name="G_L_Account__Name">
+          <DataField>G_L_Account__Name</DataField>
+        </Field>
+        <Field Name="DebitAmount_GLEntry">
+          <DataField>DebitAmount_GLEntry</DataField>
+        </Field>
+        <Field Name="DebitAmount_GLEntryFormat">
+          <DataField>DebitAmount_GLEntryFormat</DataField>
+        </Field>
+        <Field Name="CreditAmount_GLEntry">
+          <DataField>CreditAmount_GLEntry</DataField>
+        </Field>
+        <Field Name="CreditAmount_GLEntryFormat">
+          <DataField>CreditAmount_GLEntryFormat</DataField>
+        </Field>
+        <Field Name="BeginningBalance_GLEntry">
+          <DataField>BeginningBalance_GLEntry</DataField>
+        </Field>
+        <Field Name="BeginningBalance_GLEntryFormat">
+          <DataField>BeginningBalance_GLEntryFormat</DataField>
+        </Field>
+        <Field Name="G_L_Entry__Posting_Date_">
+          <DataField>G_L_Entry__Posting_Date_</DataField>
+        </Field>
+        <Field Name="G_L_Entry__Document_Type_">
+          <DataField>G_L_Entry__Document_Type_</DataField>
+        </Field>
+        <Field Name="G_L_Entry__Document_No__">
+          <DataField>G_L_Entry__Document_No__</DataField>
+        </Field>
+        <Field Name="G_L_Entry__Ext_Document_No__">
+          <DataField>G_L_Entry__Ext_Document_No__</DataField>
+        </Field>
+        <Field Name="G_L_Entry__Source_Code_">
+          <DataField>G_L_Entry__Source_Code_</DataField>
+        </Field>
+        <Field Name="G_L_Entry__Source_Type_">
+          <DataField>G_L_Entry__Source_Type_</DataField>
+        </Field>
+        <Field Name="G_L_Entry__Source_No__">
+          <DataField>G_L_Entry__Source_No__</DataField>
+        </Field>
+        <Field Name="G_L_Entry_Description">
+          <DataField>G_L_Entry_Description</DataField>
+        </Field>
+        <Field Name="Seq1">
+          <DataField>Seq1</DataField>
+        </Field>
+        <Field Name="SourceName">
+          <DataField>SourceName</DataField>
+        </Field>
+        <Field Name="G_L_Entry_Entry_No_">
+          <DataField>G_L_Entry_Entry_No_</DataField>
+        </Field>
+        <Field Name="G_L_Entry_G_L_Account_No_">
+          <DataField>G_L_Entry_G_L_Account_No_</DataField>
+        </Field>
+        <Field Name="G_L_Entry_Global_Dimension_1_Code">
+          <DataField>G_L_Entry_Global_Dimension_1_Code</DataField>
+        </Field>
+        <Field Name="G_L_Entry_Global_Dimension_2_Code">
+          <DataField>G_L_Entry_Global_Dimension_2_Code</DataField>
+        </Field>
+        <Field Name="G_L_Entry_Business_Unit_Code">
+          <DataField>G_L_Entry_Business_Unit_Code</DataField>
+        </Field>
+        <Field Name="Balance_ForwardCaption">
+          <DataField>Balance_ForwardCaption</DataField>
+        </Field>
+        <Field Name="Balance_to_Carry_ForwardCaption">
+          <DataField>Balance_to_Carry_ForwardCaption</DataField>
+        </Field>
+        <Field Name="PADSTR_____G_L_Account__Indentation_____G_L_Account__Name">
+          <DataField>PADSTR_____G_L_Account__Indentation_____G_L_Account__Name</DataField>
+        </Field>
+        <Field Name="EndingBalance">
+          <DataField>EndingBalance</DataField>
+        </Field>
+        <Field Name="EndingBalanceFormat">
+          <DataField>EndingBalanceFormat</DataField>
+        </Field>
+        <Field Name="TotalDebitAmount">
+          <DataField>TotalDebitAmount</DataField>
+        </Field>
+        <Field Name="TotalDebitAmountFormat">
+          <DataField>TotalDebitAmountFormat</DataField>
+        </Field>
+        <Field Name="TotalCreditAmount">
+          <DataField>TotalCreditAmount</DataField>
+        </Field>
+        <Field Name="TotalCreditAmountFormat">
+          <DataField>TotalCreditAmountFormat</DataField>
+        </Field>
+        <Field Name="STRSUBSTNO_Text002__G_L_Account___No___">
+          <DataField>STRSUBSTNO_Text002__G_L_Account___No___</DataField>
+        </Field>
+        <Field Name="Seq2">
+          <DataField>Seq2</DataField>
+        </Field>
+        <Field Name="Blank_Number">
+          <DataField>Blank_Number</DataField>
+        </Field>
+        <Field Name="Total_ActivitiesCaption">
+          <DataField>Total_ActivitiesCaption</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
